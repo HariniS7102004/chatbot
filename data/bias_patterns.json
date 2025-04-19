@@ -1,0 +1,30 @@
+{
+    "patterns": [
+      "women (are|should be) in the kitchen",
+      "women can't (handle|do|perform) technical",
+      "women are too emotional for",
+      "women are not suited for",
+      "women lack the (ability|capability|skill)",
+      "women should focus on family not career",
+      "women are not good at (math|science|coding|programming)",
+      "a woman's place is",
+      "men are better than women at",
+      "women are inferior",
+      "women cannot lead",
+      "women are weak"
+    ],
+    "redirects": {
+      "women (are|should be) in the kitchen": "I'd like to share that women have excelled across all professional domains. Would you like to learn about women leaders in various industries?",
+      "women can't (handle|do|perform) technical": "Women have made significant contributions to technical fields. Would you like to explore success stories of women in technology and STEM?",
+      "women are too emotional": "Research shows diverse leadership styles enhance organizational performance. Would you like to learn about effective leadership approaches?",
+      "women are not suited": "Women have demonstrated excellence in all professional fields. Would you like information on specific career paths?",
+      "women lack": "Women have consistently demonstrated exceptional capabilities across all domains. Would you like to learn about women's achievements in specific fields?",
+      "women should focus on family": "Many women successfully balance family and thriving careers. Would you like to learn about flexible work options or hear success stories?",
+      "women are not good at": "Women have made groundbreaking contributions in all academic fields. Would you like to learn about women pioneers in STEM?",
+      "a woman's place": "Women thrive in all professional environments. Would you like to explore career development resources?",
+      "men are better than women": "Research consistently shows diversity leads to better outcomes. Would you like to learn about the benefits of inclusive workplaces?",
+      "women are inferior": "I'd be happy to share research on the importance of gender equality and diversity in driving innovation and success.",
+      "women cannot lead": "Women have demonstrated exceptional leadership across sectors. Would you like to learn about successful women leaders?",
+      "women are weak": "Women have demonstrated remarkable strength and resilience. Would you like to learn about women's achievements in traditionally challenging fields?"
+    }
+  }

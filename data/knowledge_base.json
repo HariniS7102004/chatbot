@@ -1,0 +1,102 @@
+{
+    "faqs": [
+      {
+        "question": "What is JobsForHer Foundation?",
+        "answer": "JobsForHer Foundation is a non-profit organization dedicated to empowering women in their career journeys by providing access to job opportunities, mentorship programs, skills development resources, and a supportive community network."
+      },
+      {
+        "question": "How can I find job opportunities through JobsForHer?",
+        "answer": "You can explore job listings on our platform by industry, role, or experience level. Our AI assistant can also help you search for specific positions or recommend opportunities based on your interests."
+      },
+      {
+        "question": "Are there mentorship programs available?",
+        "answer": "Yes, JobsForHer offers various mentorship programs connecting women with experienced professionals across industries. These programs provide guidance, career advice, and networking opportunities."
+      },
+      {
+        "question": "What community events does JobsForHer organize?",
+        "answer": "We host various events including webinars, workshops, networking sessions, and conferences focused on career development, leadership skills, and industry insights specifically designed for women professionals."
+      },
+      {
+        "question": "How can I contribute to the JobsForHer community?",
+        "answer": "You can contribute by becoming a mentor, sharing your success story, participating in community discussions, or volunteering for various initiatives that support women's professional growth."
+      }
+    ],
+    "events": [
+      {
+        "title": "Women in Tech Leadership Summit",
+        "date": "2025-05-15 09:00",
+        "description": "Join industry leaders for a day of inspiring talks, panel discussions, and networking opportunities focused on advancing women's leadership in technology sectors.",
+        "location": "Virtual Event",
+        "registration_url": "https://jobsforher.com/events/tech-leadership-summit"
+      },
+      {
+        "title": "Resume Building Workshop",
+        "date": "2025-04-28 14:00",
+        "description": "Learn how to craft an impactful resume that highlights your skills and experiences effectively. This hands-on workshop will provide personalized feedback and industry-specific tips.",
+        "location": "Virtual Event",
+        "registration_url": "https://jobsforher.com/events/resume-workshop"
+      },
+      {
+        "title": "Returning to Work After a Career Break",
+        "date": "2025-05-10 11:00",
+        "description": "This supportive session addresses the challenges of rejoining the workforce after a career break, offering practical strategies and confidence-building exercises.",
+        "location": "Virtual Event",
+        "registration_url": "https://jobsforher.com/events/returning-to-work"
+      }
+    ],
+    "mentorship": [
+      {
+        "title": "Executive Leadership Program",
+        "description": "A 6-month mentorship program pairing mid-career women with C-suite executives to develop leadership skills and strategic thinking.",
+        "duration": "6 months",
+        "application_deadline": "2025-05-30",
+        "eligibility": "Women with 8+ years of professional experience",
+        "apply_url": "https://jobsforher.com/mentorship/executive-leadership"
+      },
+      {
+        "title": "Tech Accelerator Mentorship",
+        "description": "Focused mentoring for women in technology roles, offering guidance on technical skill development, career progression, and industry networking.",
+        "duration": "3 months",
+        "application_deadline": "2025-05-15",
+        "eligibility": "Women in technical roles with 2+ years experience",
+        "apply_url": "https://jobsforher.com/mentorship/tech-accelerator"
+      },
+      {
+        "title": "Career Restart Program",
+        "description": "Supportive mentorship for women returning to work after a career break, with focus on skills refreshment and confidence building.",
+        "duration": "4 months",
+        "application_deadline": "2025-06-10",
+        "eligibility": "Women rejoining workforce after a career break of 1+ years",
+        "apply_url": "https://jobsforher.com/mentorship/career-restart"
+      }
+    ],
+    "empowerment": [
+      {
+        "title": "Women's Leadership Global Report 2025",
+        "description": "This comprehensive report analyzes the current state of women's leadership across industries worldwide, highlighting progress, persistent challenges, and emerging opportunities.",
+        "source": "International Women's Leadership Council",
+        "publication_date": "2025-03-08",
+        "key_findings": [
+          "Women now hold 28% of senior leadership positions globally, up from 24% in 2023",
+          "Tech sector shows fastest growth in women's leadership representation",
+          "Flexible work policies strongly correlate with higher retention of women leaders"
+        ]
+      },
+      {
+        "title": "Gender Pay Gap Initiative",
+        "description": "An ongoing global campaign to address workplace compensation disparities and promote equal pay for equal work across industries.",
+        "organization": "Global Women's Economic Forum",
+        "launched": "2024-11-15",
+        "impact": "Successfully advocated for pay transparency legislation in 12 countries during 2024-2025",
+        "get_involved_url": "https://gwef.org/pay-equity-initiative"
+      },
+      {
+        "title": "Women in STEM Education Program",
+        "description": "A comprehensive educational initiative aimed at increasing girls' and women's participation in science, technology, engineering, and mathematics from primary school through career development.",
+        "organization": "International STEM Alliance",
+        "regions": "Global, with special focus on developing economies",
+        "impact": "Reached over 2 million girls and women through educational programs in 2024",
+        "learn_more_url": "https://stemallianceglobal.org/women-program"
+      }
+    ]
+  }

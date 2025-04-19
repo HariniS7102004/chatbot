@@ -1,0 +1,39 @@
+{
+    "sessions": [
+      {
+        "title": "Building Your Personal Brand on LinkedIn",
+        "speaker": "Sarah Johnson, LinkedIn Brand Specialist",
+        "date": "2025-04-25 16:00",
+        "description": "Learn how to optimize your LinkedIn profile, create engaging content, and build a professional network that opens doors to new opportunities.",
+        "registration_link": "https://jobsforher.com/sessions/linkedin-personal-brand"
+      },
+      {
+        "title": "Negotiation Skills for Women Professionals",
+        "speaker": "Dr. Michelle Patel, Negotiation Expert",
+        "date": "2025-05-03 10:00",
+        "description": "Master the art of effective negotiation with strategies specifically designed to address challenges women face in professional settings.",
+        "registration_link": "https://jobsforher.com/sessions/negotiation-skills"
+      },
+      {
+        "title": "Tech Trends 2025: Opportunities for Career Growth",
+        "speaker": "Jennifer Lee, CTO of FutureTech",
+        "date": "2025-05-12 14:00",
+        "description": "Explore emerging technology trends and discover how to position yourself for success in the rapidly evolving tech landscape.",
+        "registration_link": "https://jobsforher.com/sessions/tech-trends-2025"
+      },
+      {
+        "title": "Mastering Work-Life Integration",
+        "speaker": "Emma Rodriguez, Work-Life Balance Coach",
+        "date": "2025-04-30 17:00",
+        "description": "Learn practical strategies for managing professional responsibilities while maintaining personal well-being and family life.",
+        "registration_link": "https://jobsforher.com/sessions/work-life-integration"
+      },
+      {
+        "title": "Financial Planning for Professional Women",
+        "speaker": "Priya Sharma, Financial Advisor",
+        "date": "2025-05-18 11:00",
+        "description": "Get expert guidance on investment strategies, retirement planning, and financial decision-making tailored for women professionals.",
+        "registration_link": "https://jobsforher.com/sessions/financial-planning"
+      }
+    ]
+  }
