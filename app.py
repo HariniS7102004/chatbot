@@ -30,7 +30,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 # Initialize the Gemini model
 available_models = genai.list_models()
 print("Available models:", [model.name for model in available_models])
-model = genai.GenerativeModel('gemini-1.5-pro-latest')#('gemini-1.5-flash-latest')#('gemini-pro')
+model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
 # Data paths
 SESSION_DATA_PATH = "data/session_details.json"
@@ -38,7 +38,7 @@ JOB_LISTINGS_PATH = "data/job_listing_data.csv"
 KNOWLEDGE_BASE_PATH = "data/knowledge_base.json"
 BIAS_PATTERNS_PATH = "data/bias_patterns.json"
 WOMEN_EMPOWERMENT_SOURCES = [
-    "https://api.example.com/women-empowerment/updates",  # Replace with actual API endpoints
+    "https://api.example.com/women-empowerment/updates", 
     "https://api.example.com/leadership-programs",
 ]
 
@@ -106,7 +106,7 @@ class DataIntegration:
         self.knowledge_base = None
         self.bias_patterns = None
         self.last_update = None
-        self.update_interval = 3600  # 1 hour in seconds
+        self.update_interval = 3600 
         
     def load_data(self):
         """Load all required data sources"""
@@ -296,19 +296,15 @@ class NLPProcessor:
     def generate_response(self, message, session_context):
         """Generate response using Gemini API with context"""
         
-        # Check for bias first
         is_biased, redirect_message = self.detect_bias(message)
         if is_biased and redirect_message:
             return redirect_message
-            
-        # Detect intent
+         
         intent = self.detect_intent(message)
         
-        # Create context-aware prompt for Gemini
         prompt = self._create_context_prompt(message, intent, session_context)
         
         try:
-            # Generate response using Gemini
             response = self.model.generate_content(prompt)
             return response.text
         except Exception as e:
@@ -320,7 +316,7 @@ class NLPProcessor:
         
         # Base system instruction
         system_instruction = """
-        You are Asha, an AI assistant for the JobsForHer Foundation. Your role is to help women with their
+        You are AWEbot, an AI assistant for the JobsForHer Foundation. Your role is to help women with their
         career journeys by providing information about job opportunities, community events, mentorship
         programs, and women empowerment initiatives. Follow these guidelines:
         
@@ -368,17 +364,17 @@ class NLPProcessor:
                 context_data += "\nAs an alternative, here's what I found from the web:\n"
                 context_data += f"{search_result}\n"
         #/changed
-        # Conversation history context
+        
         conversation_context = ""
         if session_context and "conversation_history" in session_context:
             recent_history = session_context["conversation_history"][-3:] if session_context["conversation_history"] else []
             if recent_history:
                 conversation_context += "Recent conversation:\n"
                 for exchange in recent_history:
-                    conversation_context += f"User: {exchange.get('user', '')}\nAsha: {exchange.get('bot', '')}\n\n"
+                    conversation_context += f"User: {exchange.get('user', '')}\nAWE: {exchange.get('bot', '')}\n\n"
         
         # Combine all contexts
-        full_prompt = f"{system_instruction}\n\n{conversation_context}\n{context_data}\nUser: {message}\nAsha:"
+        full_prompt = f"{system_instruction}\n\n{conversation_context}\n{context_data}\nUser: {message}\nAWE:"
         return full_prompt
 
 #changed
@@ -397,7 +393,7 @@ def call_google_search_api(query):
             return "No web results found."
 
         summary = ""
-        for item in results[:3]:  # Show top 3 results
+        for item in results[:3]: 
             title = item.get("title")
             snippet = item.get("snippet")
             link = item.get("link")
@@ -409,7 +405,6 @@ def call_google_search_api(query):
         return f"Error retrieving web results: {str(e)}"
 #/changed
 
-# Main Chatbot class
 class AshaBot:
     def __init__(self):
         self.context_manager = ContextManager()
@@ -431,14 +426,12 @@ class AshaBot:
                     self.data_integration.update_knowledge_base()
                     print("Knowledge base updated successfully")
                     
-                    # Clean up old sessions
                     self.context_manager.cleanup_old_sessions()
                     
-                    # Wait for next update interval
                     time.sleep(self.data_integration.update_interval)
                 except Exception as e:
                     print(f"Error in update routine: {e}")
-                    time.sleep(300)  # Wait 5 minutes before retrying
+                    time.sleep(300) 
         
         # Start update thread
         update_thread = threading.Thread(target=update_routine)
@@ -472,7 +465,6 @@ def chat_endpoint():
     session_id = data.get('session_id', str(time.time()))
     message = data['message']
     
-    # Process message through the bot
     bot = AshaBot()
     response = bot.process_message(session_id, message)
     
@@ -485,7 +477,6 @@ def chat_endpoint():
 def health_check():
     return jsonify({'status': 'healthy', 'timestamp': datetime.now().isoformat()})
 
-# Additional utility endpoints
 @app.route('/api/jobs', methods=['GET'])
 def get_jobs():
     query = request.args.get('query', '')
@@ -507,7 +498,6 @@ def get_events():
     
     return jsonify({'events': events})
 
-# Main entry point
 if __name__ == '__main__':
     # Create necessary directories if they don't exist
     os.makedirs('data', exist_ok=True)
@@ -548,5 +538,5 @@ if __name__ == '__main__':
                 }
             }, f)
     
-    # Start the Flask application
+    
     app.run(host='0.0.0.0', port=5000, debug=True)

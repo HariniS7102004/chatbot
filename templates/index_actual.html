@@ -3,56 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWE - AT YOUR SERVICE</title>
+    <title>Asha - JobsForHer AI Assistant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='hi.css') }}">
+    <style>
+        .chat-container {
+            height: 70vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-message {
+            margin: 8px;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #e2f5fe;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background-color: #f0f0f0;
+            align-self: flex-start;
+        }
+        .typing-indicator {
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+        }
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #888;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: 0s; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
 </head>
-<body class="main-body">
-    <div class="container">
-        <div class="card">
-            <div class="hello">
-                <img src="static\WBot-removebg-preview.png" alt="Asha Logo" class="w-14 h-14 rounded-full mr-3 object-cover">
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Header -->
+            <div class="bg-purple-700 text-white p-4 flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Asha Logo" class="rounded-full mr-3">
                 <div>
-                    <h1 class="text-xl font-bold">AWE</h1>
-                    <p class="text-sm opacity-80">AT YOUR SERVICE</p>
+                    <h1 class="text-xl font-bold">Asha</h1>
+                    <p class="text-sm opacity-80">JobsForHer AI Assistant</p>
                 </div>
             </div>
             
+            <!-- Chat Messages -->
             <div id="chat-container" class="chat-container p-4">
                 <div class="bot-message chat-message">
-                    Hello! I'm AWE, your AI assistant from JobsForHer Foundation. I can help you with job listings, community events, mentorship programs, and women empowerment resources. How can I assist you today?
+                    Hello! I'm Asha, your AI assistant from JobsForHer Foundation. I can help you with job listings, community events, mentorship programs, and women empowerment resources. How can I assist you today?
                 </div>
             </div>
             
+            <!-- Input Area -->
             <div class="border-t p-4">
                 <form id="chat-form" class="flex">
                     <input 
                         type="text" 
                         id="user-input" 
-                        class="ip"
+                        class="flex-grow border rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
                         placeholder="Type your message..."
                         autocomplete="off"
                     >
                     <button 
                         type="submit" 
-                        class="hii"
+                        class="bg-purple-700 text-white px-6 py-2 rounded-r-lg hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     >
                         Send
                     </button>
                 </form>
             </div>
             
+            <!-- Suggestions -->
             <div class="p-4 bg-gray-50">
-                <p class="may">Suggested questions:</p>
+                <p class="text-sm text-gray-600 mb-2">Suggested questions:</p>
                 <div class="flex flex-wrap gap-2">
-                    <button class="suggestion-btn suggestion-bg-tech">Find job openings in tech</button>
-                    <button class="suggestion-btn suggestion-bg-mentorship">Upcoming mentorship events</button>
-                    <button class="suggestion-btn suggestion-bg-leadership">Women leadership programs</button>
-                    <button class="suggestion-btn suggestion-bg-transition">Career transition advice</button>
-                </div>                
+                    <button class="suggestion-btn bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full hover:bg-purple-200">Find job openings in tech</button>
+                    <button class="suggestion-btn bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full hover:bg-purple-200">Upcoming mentorship events</button>
+                    <button class="suggestion-btn bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full hover:bg-purple-200">Women leadership programs</button>
+                    <button class="suggestion-btn bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full hover:bg-purple-200">Career transition advice</button>
+                </div>
             </div>
         </div>
-        <p class="text-center text-gray-500 text-sm mt-4">Bombard your questions</p>
+        <p class="text-center text-gray-500 text-sm mt-4">© 2025 JobsForHer Foundation</p>
     </div>
 
     <script>
@@ -68,6 +115,7 @@
                 localStorage.setItem('asha_session_id', sessionId);
             }
             
+            // Function to add a message to the chat
             function addMessage(message, isUser = false) {
                 const messageDiv = document.createElement('div');
                 messageDiv.classList.add('chat-message');
@@ -77,6 +125,7 @@
                 chatContainer.scrollTop = chatContainer.scrollHeight;
             }
             
+            // Function to show typing indicator
             function showTypingIndicator() {
                 const indicatorDiv = document.createElement('div');
                 indicatorDiv.classList.add('chat-message', 'bot-message', 'typing-indicator-container');
@@ -91,18 +140,21 @@
                 chatContainer.appendChild(indicatorDiv);
                 chatContainer.scrollTop = chatContainer.scrollHeight;
             }
-   
+            
+            // Function to hide typing indicator
             function hideTypingIndicator() {
                 const indicator = document.getElementById('typing-indicator');
                 if (indicator) {
                     indicator.remove();
                 }
             }
-        
+            
+            // Function to send message to the API
             async function sendMessage(message) {
                 addMessage(message, true);
                 userInput.value = '';
-
+                
+                // Show typing indicator
                 showTypingIndicator();
                 
                 try {
@@ -117,6 +169,7 @@
                         })
                     });
                     
+                    // Hide typing indicator
                     hideTypingIndicator();
                     
                     if (response.ok) {
@@ -127,6 +180,7 @@
                         addMessage(`Sorry, I encountered an error: ${errorData.error}`);
                     }
                 } catch (error) {
+                    // Hide typing indicator
                     hideTypingIndicator();
                     
                     addMessage('Sorry, I encountered a connection issue. Please try again.');
@@ -134,6 +188,7 @@
                 }
             }
             
+            // Form submission event
             chatForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const message = userInput.value.trim();
@@ -142,6 +197,7 @@
                 }
             });
             
+            // Suggestion button clicks
             suggestionBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const message = this.textContent;
@@ -149,6 +205,7 @@
                 });
             });
             
+            // Focus input field on page load
             userInput.focus();
         });
     </script>

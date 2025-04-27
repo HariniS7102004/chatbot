@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.chat-container {
+    height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.chat-message {
+    margin: 8px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    background-color: #85368e;
+    color: white;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #320036;
+    color: white;
+    align-self: flex-end;
+}
+
+.main-body {
+    background-color: #412d43; 
+    font-family: 'sans-serif';  
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+    padding-top: 2rem;   
+    padding-bottom: 2rem; 
+}
+
+/* Card */
+.card {
+    max-width: 42rem;  
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;  
+    border-radius: 0.5rem;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    overflow: hidden;  
+}
+
+
+.hello {
+    background-color:#2c0931;  
+    padding: 1rem;             
+    color: white;               
+    display: flex;             
+    align-items: center;        
+}
+
+.hii {
+     background-color:#2c0931;  
+    color: white;
+    padding-left: 1.5rem;      
+    padding-right: 1.5rem;      
+    padding-top: 0.5rem;       
+    padding-bottom: 0.5rem;    
+    border-top-right-radius: 0.5rem;  
+    border-bottom-right-radius: 0.5rem;   
+    transition: background-color 0.3s, box-shadow 0.3s;  
+}
+
+.hii:hover {
+    background-color: #412d43;   
+}
+
+.hii:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #2c0931;  
+}
+
+.ip {
+    background-color: #fef8ff;
+    flex-grow: 1;
+    border: 1px solid #ccc;  
+    border-top-left-radius: 0.5rem;   
+    border-bottom-left-radius: 0.5rem;  
+    padding-left: 1rem;        
+    padding-right: 1rem;       
+    padding-top: 0.5rem;      
+    padding-bottom: 0.5rem;   
+    transition: box-shadow 0.3s; 
+}
+
+.ip:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #2c0931;  
+}
+
+.may {
+    font-size: 0.875rem; 
+    color: #000;       
+    margin-bottom: 0.5rem; 
+}
+
+.suggestion-btn {
+    font-size: 0.875rem;  
+    padding-left: 0.75rem;  
+    padding-right: 0.75rem; 
+    padding-top: 0.25rem;   
+    padding-bottom: 0.25rem; 
+    border-radius: 9999px;  
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.suggestion-bg-tech {
+    background-color: #f3e6f7;
+    color: #2c0931;
+}
+
+.suggestion-bg-mentorship {
+    background-color: #f3e4f7;
+    color: #2c0931;
+}
+
+.suggestion-bg-leadership {
+    background-color: #f3e6f7;
+    color: #2c0931;
+}
+
+.suggestion-bg-transition {
+    background-color: #f3e4f7;
+    color: #2c0931;
+}
+
+.suggestion-bg-tech:hover {
+    background-color: #89518f;  
+    transform: scale(1.05);  
+}
+
+.suggestion-bg-mentorship:hover {
+    background-color:#89518f;  
+    transform: scale(1.05);  
+}
+
+.suggestion-bg-leadership:hover {
+    background-color:#89518f;  
+    transform: scale(1.05);  
+}
+
+.suggestion-bg-transition:hover {
+    background-color: #89518f;  
+    transform: scale(1.05);  
+}
+
+.suggestion-bg-tech:active {
+    background-color: #d0b6e7;  
+}
+
+.suggestion-bg-mentorship:active {
+    background-color: #d9b3f6; 
+}
+
+.suggestion-bg-leadership:active {
+    background-color: #d0b6e7;  
+}
+
+.suggestion-bg-transition:active {
+    background-color: #d9b3f6;  
+}
+
+.suggestion-bg-tech:focus {
+    outline: 2px solid #2c0931;  
+}
+
+.suggestion-bg-mentorship:focus {
+    outline: 2px solid #2c0931;  
+}
+
+.suggestion-bg-leadership:focus {
+    outline: 2px solid #2c0931;  
+}
+
+.suggestion-bg-transition:focus {
+    outline: 2px solid #2c0931;  
+}
+
+.typing-indicator-container {
+    display: flex;
+    justify-content: center;
+}
+
+.typing-indicator {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #888;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
